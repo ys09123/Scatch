@@ -47,3 +47,8 @@ module.exports.loginUser = async (req, res) => {
     }
   })
 }
+
+module.exports.logout = (req, res) => {
+  req.flash("message", "Logged out successfully.")
+  res.clearCookie("token").redirect("/")
+}
